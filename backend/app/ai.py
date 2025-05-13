@@ -1,7 +1,6 @@
 from langchain import OpenAI, PromptTemplate, LLMChain
 from .db import SessionLocal
 from .models import Session as SessionModel
-
 def summarize_session(session_id: int) -> str:
     # 1) Fetch stored notes from the DB
     db = SessionLocal()

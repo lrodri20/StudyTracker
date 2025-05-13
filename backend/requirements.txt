@@ -7,3 +7,4 @@ pydantic
 langchain
 google-cloud-aiplatform
 psycopg2-binary
+python-dotenv
