@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+celery
+redis
+sqlalchemy
+pydantic
+langchain
+google-cloud-aiplatform
+psycopg2-binary
