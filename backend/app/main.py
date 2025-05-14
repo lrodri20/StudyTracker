@@ -37,7 +37,7 @@ def create_session(
     db.refresh(sess)
 
     # schedule summary generation
-    background_tasks.add_task(celery_summary.delay, sess.id)
+    celery_summary.delay(sess.id)
     return {"id": sess.id}
 @app.get("/sessions/")
 def get_all_sessions():

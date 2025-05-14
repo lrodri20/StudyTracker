@@ -5,7 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 import os
-from langchain import OpenAI, PromptTemplate, LLMChain
+from langchain.chat_models import ChatOpenAI
+from langchain_core.prompts import PromptTemplate
+from langchain.chains import LLMChain
 from .db import SessionLocal
 from .models import Session as SessionModel
 
@@ -28,7 +30,7 @@ def summarize_session(session_id: int) -> str:
             "OPENAI_API_KEY not set—did you create backend/.env and run from the backend folder?"
         )
 
-    llm = OpenAI(
+    llm = ChatOpenAI(
         model_name="gpt-4o",
         openai_api_key=openai_key
     )
